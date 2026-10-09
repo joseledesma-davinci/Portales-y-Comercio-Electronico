@@ -1,0 +1,17 @@
+Carrera: Diseño y Desarrollo Web
+Materia: Portales y Comercio Electrónico
+Cuatrimestre: 4
+Año: 2026
+Turno: Noche
+Comisión: DWN4AV
+Apellido y nombre: Ledesma Jose Nicolas
+Docente: Santiago Gallino
+Carácter de entrega: 1er parcial
+
+Proyecto: DevHost Estudio (Laravel 12)
+Temática: Estudio de Desarrollo Web & Hosting
+
+Credenciales admin de seeders:
+- Email: admin@estudio.test
+- Password: admin123
+

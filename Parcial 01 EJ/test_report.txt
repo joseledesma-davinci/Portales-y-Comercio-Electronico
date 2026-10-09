@@ -1,0 +1,15 @@
+/ => 200
+/servicios => 200
+/blog => 200
+/blog/checklist-blindar-wordpress-2026 => 200
+/admin/login => 200
+/admin sin sesión => 302 (Location: http://127.0.0.1:8000/admin/login)
+POST /admin/login (credencial incorrecta) => 302 (sin mensaje detectado)
+GET /admin/login token extraído => sí; cookie XSRF-TOKEN => sí
+POST /admin/login (credenciales válidas) => 302 (Location: N/A)
+GET /admin con sesión => 200
+GET /admin/posts/crear => 200
+POST /admin/posts (crear con CSRF) => 302; slug creado en DB: 1
+GET /admin/posts/{id}/editar => 200
+POST /admin/posts/{id} + _method=PUT => 302; slug actualizado en DB: 1
+POST /admin/posts/{id} + _method=DELETE => 302; registro restante en DB: 0

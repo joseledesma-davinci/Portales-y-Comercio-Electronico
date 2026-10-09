@@ -1,0 +1,45 @@
+DATOS DEL/LOS ESTUDIANTES — PRIMER PARCIAL (completar antes de entregar)
+===========================================================
+
+Carrera: [completar]
+Materia: Portales y Comercio Electrónico
+Cuatrimestre: [completar]
+Año: [completar]
+Turno: [completar]
+Comisión: [completar]
+Apellido y nombre: [completar]
+Docente: Santiago Gallino
+Carácter de entrega: 1er parcial
+
+-----------------------------------------------------------
+DATOS TÉCNICOS DEL PROYECTO
+-----------------------------------------------------------
+
+Proyecto: DevHost Estudio — Estudio de Desarrollo Web & Hosting
+Framework: Laravel 12.x (versión actual)
+Lenguaje: PHP 8.2+
+
+Temática:
+- Servicios para contratación: Planes de hosting, desarrollo web, mantenimiento.
+- Blog: seguridad web, optimización de velocidad, novedades tecnológicas.
+
+Base de datos:
+- Motor sugerido: MySQL (XAMPP / MAMP / servidor local).
+- Nombre de la base según consigna:
+    * Individual: apellido_nombre  (ej: garcia_juan)
+    * Grupal:    apellido1_apellido2  (ej: garcia_perez)
+- Toda la creación de tablas y la carga inicial de datos se realiza con
+  migrations y seeders: `php artisan migrate --seed`.
+- Tablas: users, categories, posts, services (con relaciones por foreign keys).
+
+Credenciales del administrador (sembradas por los seeders):
+- Email: admin@estudio.test
+- Contraseña: admin123
+
+Rutas principales:
+- / ................. Inicio (presenta el estudio y sus servicios)
+- /servicios ........ Catálogo de servicios y precios
+- /blog ............. Blog / novedades (paginado)
+- /blog/{slug} ...... Detalle de una publicación
+- /admin/login ...... Login del panel de administración
+- /admin ............ Panel: ABM de publicaciones
