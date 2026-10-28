@@ -16,7 +16,7 @@
 
     <div class="form-group">
         <label for="published_at">Fecha de publicación</label>
-        <input type="date" id="published_at" name="published_at" value="{{ old('published_at', \Carbon\Carbon::parse($post?->published_at)->format('Y-m-d')) }}">
+        <input type="date" id="published_at" name="published_at" value="{{ old('published_at', \Carbon\Carbon::parse($post?->published_at)->format('Y-m-d')) }}" min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
         @error('published_at')
             <small class="field-error">{{ $message }}</small>
         @enderror

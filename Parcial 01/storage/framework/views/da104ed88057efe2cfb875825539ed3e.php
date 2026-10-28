@@ -24,7 +24,7 @@ unset($__errorArgs, $__bag); ?>
 
     <div class="form-group">
         <label for="published_at">Fecha de publicación</label>
-        <input type="date" id="published_at" name="published_at" value="<?php echo e(old('published_at', \Carbon\Carbon::parse($post?->published_at)->format('Y-m-d'))); ?>">
+        <input type="date" id="published_at" name="published_at" value="<?php echo e(old('published_at', \Carbon\Carbon::parse($post?->published_at)->format('Y-m-d'))); ?>" min="<?php echo e(\Carbon\Carbon::now()->format('Y-m-d')); ?>">
         <?php $__errorArgs = ['published_at'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :

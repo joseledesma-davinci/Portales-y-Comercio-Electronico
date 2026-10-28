@@ -207,6 +207,8 @@ textarea {
     border-radius: 8px;
     padding: 0.55rem 0.7rem;
     font: inherit;
+    background: white;
+    color: black;
 }
 
 .field-error {
