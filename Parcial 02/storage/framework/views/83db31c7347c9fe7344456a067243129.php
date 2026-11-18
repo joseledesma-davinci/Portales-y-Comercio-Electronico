@@ -1,0 +1,19 @@
+<?php $__env->startSection('title', 'Crear publicación'); ?>
+
+<?php $__env->startSection('content'); ?>
+<section aria-labelledby="titulo-crear-post">
+    <h1 id="titulo-crear-post">Crear publicación</h1>
+
+    <?php if($errors->any()): ?>
+        <div class="flash flash-error" role="alert">Hay errores en los datos enviados. Revisá los campos marcados.</div>
+    <?php endif; ?>
+
+    <form action="<?php echo e(route('admin.posts.store')); ?>" method="post" class="admin-form">
+        <?php echo csrf_field(); ?>
+        <?php echo $__env->make('admin.posts.form', ['post' => null], array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+        <button type="submit" class="btn btn-primary">Guardar publicación</button>
+    </form>
+</section>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.admin', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\DAVINCI\Portales y Comercio Electronico\Parcial 01\resources\views/admin/posts/create.blade.php ENDPATH**/ ?>

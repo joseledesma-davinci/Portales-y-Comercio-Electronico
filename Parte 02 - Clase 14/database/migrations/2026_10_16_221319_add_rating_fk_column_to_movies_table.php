@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::table('movies', function (Blueprint $table) {
+            /*
+                # Definición de FKs en Laravel
+                La clase Blueprint nos permite crear una FK usando su método "foreign(campoFK)".
+                Este método va a llevar dos métodos más encadenados que son:
+                    $table->foreign(campoFK)->references(campoPK)->on(tabla);
+            */
+            $table->unsignedTinyInteger('rating_fk');
+            $table->foreign('rating_fk')->references('rating_id')->on('ratings');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::table('movies', function (Blueprint $table) {
+           $table->dropColumn('rating_fk');
+        });
+    }
+};
