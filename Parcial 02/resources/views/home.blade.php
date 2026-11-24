@@ -22,7 +22,7 @@
         @foreach($services as $service)
             <article class="card">
                 @if($service->image)
-                    <img src="{{ asset('img/'.$service->image) }}" alt="Imagen del servicio {{ $service->title }}" class="card-thumb" loading="lazy">
+                    <img src="{{ $service->image_url }}" alt="Imagen del servicio {{ $service->title }}" class="card-thumb" loading="lazy">
                 @else
                     <div class="image-placeholder" aria-hidden="true">Imagen próximamente</div>
                 @endif
@@ -40,8 +40,8 @@
     <div class="card-grid">
         @foreach($posts as $post)
             <article class="card">
-                @if($post->image)
-                    <img src="{{ asset('img/'.$post->image) }}" alt="Imagen de portada: {{ $post->title }}" class="card-thumb" loading="lazy">
+                @if($post->image_url)
+                    <img src="{{ $post->image_url }}" alt="Imagen de portada: {{ $post->title }}" class="card-thumb" loading="lazy">
                 @else
                     <div class="image-placeholder" aria-hidden="true">Sin imagen</div>
                 @endif

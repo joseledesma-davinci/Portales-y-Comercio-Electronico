@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Definimos la vista de paginación global del sitio para evitar Tailwind por defecto.
+        Paginator::defaultView('pagination.site');
+        Paginator::defaultSimpleView('pagination.site');
     }
 }

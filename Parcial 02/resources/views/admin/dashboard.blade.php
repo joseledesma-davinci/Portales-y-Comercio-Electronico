@@ -29,7 +29,10 @@
     <section class="table-section" aria-labelledby="titulo-ultimas-posts">
         <div class="table-headline">
             <h2 id="titulo-ultimas-posts">Últimas publicaciones</h2>
-            <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">Nueva publicación</a>
+            <div style="display:flex; gap:.5rem; flex-wrap:wrap;">
+                <a href="{{ route('admin.users.index') }}" class="btn btn-small">Ver usuarios</a>
+                <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">Nueva publicación</a>
+            </div>
         </div>
 
         <div class="table-wrapper">

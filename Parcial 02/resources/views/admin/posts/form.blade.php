@@ -16,7 +16,7 @@
 
     <div class="form-group">
         <label for="published_at">Fecha de publicación</label>
-        <input type="date" id="published_at" name="published_at" value="{{ old('published_at', \Carbon\Carbon::parse($post?->published_at)->format('Y-m-d')) }}" min="{{ \Carbon\Carbon::now()->format('Y-m-d') }}">
+        <input type="date" id="published_at" name="published_at" value="{{ old('published_at', \Carbon\Carbon::parse($post?->published_at)->format('Y-m-d')) }}">
         @error('published_at')
             <small class="field-error">{{ $message }}</small>
         @enderror
@@ -47,10 +47,16 @@
     </div>
 
     <div class="form-group form-group-full">
-        <label for="image">Nombre de imagen (opcional)</label>
-        <input type="text" id="image" name="image" placeholder="ej: blog-seguridad.jpg" value="{{ old('image', $post?->image) }}">
+        <label for="image">Imagen (JPG, JPEG, PNG, WEBP — máximo 2MB)</label>
+        <input type="file" id="image" name="image" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp">
         @error('image')
             <small class="field-error">{{ $message }}</small>
         @enderror
+
+        @if($post && $post->image_url)
+            <p style="margin: 0.6rem 0 0.3rem;"><strong>Imagen actual:</strong></p>
+            <img src="{{ $post->image_url }}" alt="Vista previa de imagen actual" style="max-width: 260px; border-radius: 10px; border: 1px solid #dbe4ef;">
+        @endif
     </div>
+    
 </div>

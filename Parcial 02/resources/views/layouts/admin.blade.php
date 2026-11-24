@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +15,7 @@
         <nav aria-label="Navegación del panel de administración">
             <ul class="admin-nav-list">
                 <li><a href="{{ route('admin.dashboard') }}">Panel</a></li>
+                <li><a href="{{ route('admin.users.index') }}">Usuarios</a></li>
                 <li><a href="{{ route('admin.posts.index') }}">Publicaciones</a></li>
                 <li>
                     <form action="{{ route('auth.logout') }}" method="post">

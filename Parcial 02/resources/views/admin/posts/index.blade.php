@@ -51,7 +51,9 @@
             </table>
         </div>
 
-        
+        <div class="pagination-wrap" aria-label="Paginación de publicaciones">
+            {{ $posts->links('pagination.admin') }}
+        </div>
     </div>
 </section>
 @endsection

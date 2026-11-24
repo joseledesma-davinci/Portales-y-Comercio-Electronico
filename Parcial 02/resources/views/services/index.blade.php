@@ -11,7 +11,7 @@
         @forelse($services as $service)
             <article class="service-card">
                 @if($service->image)
-                    <img src="{{ asset('img/'.$service->image) }}" alt="Imagen del servicio {{ $service->title }}" class="card-thumb" loading="lazy">
+                    <img src="{{ $service->image_url }}" alt="Imagen del servicio {{ $service->title }}" class="card-thumb" loading="lazy">
                 @else
                     <div class="image-placeholder" aria-hidden="true">Imagen próximamente</div>
                 @endif

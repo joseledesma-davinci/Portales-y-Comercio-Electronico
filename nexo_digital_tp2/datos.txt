@@ -1,0 +1,31 @@
+Carrera: [completar]
+Materia: Portales y Comercio Electrónico
+Cuatrimestre: [completar]
+Año: [completar]
+Turno: [completar]
+Comisión: [completar]
+Apellido y Nombre: [completar]
+Docente: [completar]
+Carácter de entrega: 2do parcial
+
+Proyecto: DevHost Estudio (TP2)
+
+Credenciales de prueba
+- Admin: admin@estudio.test / admin123
+- Usuario 1: maria@estudio.test / maria1234
+- Usuario 2: lucas@estudio.test / lucas1234
+- Usuario 3: sofia@estudio.test / sofia1234
+
+Base de datos de entrega (placeholder)
+- DB_DATABASE=apellido_nombre
+- DB_USERNAME=root
+- DB_PASSWORD=
+
+Rutas clave
+- /
+- /servicios
+- /blog
+- /ingresar
+- /registro
+- /admin
+- /admin/usuarios

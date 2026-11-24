@@ -10,8 +10,8 @@
         <p class="meta">Publicado el {{ optional($post->published_at)->format('d/m/Y') }} por {{ $post->user->name }}</p>
     </header>
 
-    @if($post->image)
-        <img src="{{ asset('img/'.$post->image) }}" alt="Imagen destacada de {{ $post->title }}" class="detail-image" loading="lazy">
+    @if($post->image_url)
+        <img src="{{ $post->image_url }}" alt="Imagen destacada de {{ $post->title }}" class="detail-image" loading="lazy">
     @else
         <div class="image-placeholder image-placeholder-lg" aria-hidden="true">Sin imagen</div>
     @endif

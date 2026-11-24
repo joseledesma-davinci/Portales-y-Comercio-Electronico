@@ -1,16 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Ingreso al panel')
+@section('title', 'Ingresar')
 
 @section('content')
 <section class="section-spacing" aria-labelledby="titulo-login">
-    <h1 id="titulo-login">Ingreso al panel de administración</h1>
-    <p>Usá tu cuenta de administrador para gestionar publicaciones del blog.</p>
+    <h1 id="titulo-login">Ingresar a tu cuenta</h1>
+    <p>Accedé para gestionar tu perfil o administrar contenido según tu rol.</p>
 
     @if($errors->any())
-        <div class="flash flash-error" role="alert">
-            Hay errores en los datos enviados. Revisá el formulario e intentá de nuevo.
-        </div>
+        <div class="flash flash-error" role="alert">Hay errores en los datos enviados. Revisá el formulario e intentá nuevamente.</div>
     @endif
 
     <form action="{{ route('auth.login.process') }}" method="post" class="form-card">
@@ -33,5 +31,7 @@
 
         <button type="submit" class="btn btn-primary">Ingresar</button>
     </form>
+
+    <p>¿No tenés cuenta? <a href="{{ route('auth.register.form') }}" class="text-link">Crear cuenta</a>.</p>
 </section>
 @endsection

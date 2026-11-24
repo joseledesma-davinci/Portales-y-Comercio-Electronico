@@ -26,7 +26,7 @@ class Category extends Model
     protected $fillable = ['name', 'slug', 'description'];
 
     /**
-     * Relación uno a muchos con publicaciones.
+     * Retorna los posts asociados a la categoría.
      */
     public function posts(): HasMany
     {

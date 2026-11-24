@@ -144,7 +144,18 @@ main {
     font-weight: 700;
 }
 
-.text-link { color: var(--primary); font-weight: 600; }
+.text-link { 
+    color: var(--primary);
+    font-weight: 600; 
+}
+
+.text-link:link, .text-link:visited { 
+    color: var(--primary);
+}
+
+.text-link:hover { 
+    color: black;
+}
 
 .btn {
     display: inline-block;
@@ -320,7 +331,7 @@ textarea {
 }
 
 .card-thumb {
-    height: 170px;
+    height: 200px;
     margin-bottom: 0.8rem;
 }
 
@@ -357,6 +368,19 @@ textarea {
 
 .post-item h2 {
     margin-top: 0.2rem;
+}
+
+.post-item h2 a {
+    text-decoration: none;
+}
+
+.post-item h2 a:link, a:visited {
+    color: black;
+}
+
+.post-item h2 a:hover {
+    color: var(--primary);
+    text-decoration: underline;
 }
 
 @media (max-width: 880px) {

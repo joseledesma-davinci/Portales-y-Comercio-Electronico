@@ -5,12 +5,12 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 
 /**
- * Seeder principal de la aplicación.
+ * Seeder principal del proyecto TP2.
  */
 class DatabaseSeeder extends Seeder
 {
     /**
-     * Ejecuta los seeders en el orden requerido por las dependencias.
+     * Ejecuta seeders en orden de dependencias entre tablas.
      */
     public function run(): void
     {
@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ServiceSeeder::class,
             PostSeeder::class,
+            SubscriptionSeeder::class,
         ]);
     }
 }

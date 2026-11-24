@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Modelo de publicaciones del blog institucional.
@@ -42,10 +43,26 @@ class Post extends Model
     }
 
     /**
-     * Retorna la categoría asociada al post.
+     * Retorna la categoría de la publicación.
      */
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    /**
+     * Resuelve la URL de imagen para compatibilizar contenido legacy y subidas nuevas.
+     */
+    public function getImageUrlAttribute(): ?string
+    {
+        if (! $this->image) {
+            return null;
+        }
+
+        if (str_starts_with($this->image, 'posts/')) {
+            return Storage::url($this->image);
+        }
+
+        return asset('img/'.$this->image);
     }
 }

@@ -7,7 +7,7 @@
     <h1 id="titulo-servicio">{{ $service->title }}</h1>
 
     @if($service->image)
-        <img src="{{ asset('img/'.$service->image) }}" alt="Imagen del servicio {{ $service->title }}" class="detail-image" loading="lazy">
+        <img src="{{ $service->image_url }}" alt="Imagen del servicio {{ $service->title }}" class="detail-image" loading="lazy">
     @else
         <div class="image-placeholder image-placeholder-lg" aria-hidden="true">Imagen próximamente</div>
     @endif

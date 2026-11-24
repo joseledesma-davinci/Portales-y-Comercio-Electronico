@@ -10,13 +10,13 @@
     <div class="blog-list">
         @forelse($posts as $post)
             <article class="post-item">
-                @if($post->image)
-                    <img src="{{ asset('img/'.$post->image) }}" alt="Imagen de la publicación {{ $post->title }}" class="card-thumb" loading="lazy">
+                @if($post->image_url)
+                    <img src="{{ $post->image_url }}" alt="Imagen de la publicación {{ $post->title }}" class="card-thumb" loading="lazy">
                 @else
                     <div class="image-placeholder" aria-hidden="true">Sin imagen</div>
                 @endif
                 <p class="category">{{ $post->category->name }}</p>
-                <h2><a class="post-item-link" href="{{ route('posts.show', ['id' => $post->id]) }}">{{ $post->title }}</a></h2>
+                <h2><a href="{{ route('posts.show', ['id' => $post->id]) }}">{{ $post->title }}</a></h2>
                 <p>{{ $post->synopsis }}</p>
                 <p class="meta">Publicado el {{ optional($post->published_at)->format('d/m/Y') }}</p>
             </article>
@@ -25,6 +25,8 @@
         @endforelse
     </div>
 
-    
+    <div class="pagination-wrap" aria-label="Paginación del blog">
+        {{ $posts->links() }}
+    </div>
 </section>
 @endsection
